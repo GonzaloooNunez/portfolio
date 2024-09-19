@@ -78,13 +78,37 @@ body.light-mode .btn-primary {
 }
 
 /*----------------------------------------------------*/
+.timeline-container {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
 
+/* Imagen a la izquierda */
+.timeline-image-left {
+  position: absolute;
+  left: 0px;
+  top: 30%;
+  transform: translateY(-50%);
+  width: 80px;
+  height: auto;
+}
+
+.timeline-image-right {
+  position: absolute;
+  right: 200px;
+  top: 60%;
+  transform: translateY(-50%);
+  width: 80px;
+  height: auto;
+}
 .timeline {
   white-space: nowrap;
   overflow-x: auto;
   width: 100%;
-  margin-top: -90px;
-  margin-bottom: -90px;
+  margin-top: 0; /* Elimina el margin-top negativo */
+  margin-bottom: 0; /* Elimina el margin-bottom negativo */
 }
 
 .timeline ol {
@@ -262,6 +286,10 @@ body.light-mode .timeline ol li:nth-child(even) div::before {
   .timeline ol li time {
     left: -40px;
   }
+
+  .timeline-image-right {
+    right: 70px;
+  }
 }
 
 @media (max-width: 768px) {
@@ -297,6 +325,10 @@ body.light-mode .timeline ol li:nth-child(even) div::before {
 
   .timeline ol li time {
     left: -45px;
+  }
+
+  .timeline-image-right {
+    right: 5px;
   }
 }
 
