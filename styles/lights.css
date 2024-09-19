@@ -1,0 +1,46 @@
+/* Estilos para la línea de tiempo en modo diurno */
+
+body.light-mode .timeline ol li {
+  background: #333;
+}
+
+body.light-mode .timeline ol li:last-child {
+  background: #333;
+}
+
+body.light-mode .timeline ol li div {
+  background: #f4f4f4;
+  color: #333;
+  border: 2px solid #333;
+}
+
+body.light-mode .timeline ol li time {
+  background: #f1c8c8;
+  color: #333;
+  border: 2px solid #333;
+}
+
+body.light-mode .timeline ol li:nth-child(odd) div::before {
+  border-color: #f4f4f4 transparent transparent transparent;
+}
+
+body.light-mode .timeline ol li:nth-child(even) div::before {
+  border-color: transparent transparent transparent #f4f4f4;
+}
+
+body.light-mode .timeline ol li::after {
+  background: #000000;
+}
+
+body.light-mode .timeline ol li:nth-child(odd) div::before {
+  border-color: #000000 transparent transparent transparent;
+}
+
+body.light-mode .timeline ol li:nth-child(even) div::before {
+  border-color: transparent transparent transparent #000000;
+}
+
+body.light-mode .download-CV {
+  background-color: #000000;
+  color: rgb(255, 255, 255);
+}
