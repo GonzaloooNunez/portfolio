@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Gonzalo Nuñez</title>
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+    />
+    <link rel="stylesheet" href="styles/styles.css" />
+  </head>
+  <body>
+    <div class="container text-center my-5">
+      <button id="theme-toggle" class="btn btn-dark float-right">
+        <img
+          id="theme-icon"
+          src="public/sun.png"
+          alt="Modo Diurno"
+          width="24"
+          height="24"
+        />
+      </button>
+      <section id="about" class="my-5">
+        <h1 class="my_name">Gonzalo Nuñez Llorente</h1>
+        <h4>Full-Stack Developer</h4>
+        <p>
+          I'm a passionate and motivated individual in search of a position that
+          not only offers me the opportunity for growth and development that I
+          seek but also challenges me, providing valuable experience in
+          navigating and overcoming the multifaceted challenges of web
+          development. With a strong foundation and readiness to learn, I am
+          poised to contribute to and grow with my future employer, actively
+          engaging with the team and participating in creating innovative
+          solutions.
+        </p>
+      </section>
+
+      <section class="timeline">
+        <ol>
+          <li>
+            <div><time>2023</time> Full-Stack Development</div>
+          </li>
+          <li>
+            <div>
+              <time>2023</time> Work with AIs (Understanding LLMs, Pompt
+              Egineering, How to apply AI in web development )
+            </div>
+          </li>
+          <li>
+            <div>
+              <time>2024</time> Helsinki University online Full Stack Open
+            </div>
+          </li>
+        </ol>
+      </section>
+
+      <section id="projects" class="my-5">
+        <h1 class="mb-3">Projects</h1>
+        <div class="row">
+          <!-- Proyecto 1 -->
+          <div class="col-md-4">
+            <div class="card">
+              <a href="project1.html">
+                <img
+                  src="public/GameShop.png"
+                  class="card-img-top"
+                  alt="Proyecto 1"
+                />
+              </a>
+              <div class="card-body">
+                <h5 class="card-title">HTML</h5>
+                <p class="card-text">Descripción del proyecto 1.</p>
+              </div>
+            </div>
+          </div>
+          <!-- Proyecto 2 -->
+          <div class="col-md-4">
+            <div class="card">
+              <a href="project2.html">
+                <img
+                  src="img/project2.jpg"
+                  class="card-img-top"
+                  alt="Proyecto 2"
+                />
+              </a>
+              <div class="card-body">
+                <h5 class="card-title">CSS</h5>
+                <p class="card-text">Descripción del proyecto 2.</p>
+              </div>
+            </div>
+          </div>
+          <!-- Proyecto 3 -->
+          <div class="col-md-4">
+            <div class="card">
+              <a href="project3.html">
+                <img
+                  src="img/project3.jpg"
+                  class="card-img-top"
+                  alt="Proyecto 3"
+                />
+              </a>
+              <div class="card-body">
+                <h5 class="card-title">JavaScript</h5>
+                <p class="card-text">Descripción del proyecto 3.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="contact" class="my-5">
+        <h1 class="mb-3">Contact me</h1>
+        <form
+          id="contact-form"
+          class="custom-form-width"
+          action="https://getform.io/f/aolgjjkb"
+          method="POST"
+        >
+          <div class="form-group">
+            <input
+              type="text"
+              class="form-control"
+              name="name"
+              placeholder="Nombre"
+              required
+            />
+          </div>
+          <div class="form-group">
+            <input
+              type="email"
+              class="form-control"
+              name="email"
+              placeholder="Email"
+              required
+            />
+          </div>
+          <div class="form-group">
+            <textarea
+              class="form-control"
+              name="message"
+              rows="5"
+              placeholder="Mensaje"
+              required
+            ></textarea>
+          </div>
+          <input
+            type="hidden"
+            name="_gotcha"
+            style="display: none !important"
+          />
+          <button type="submit" class="btn btn-dark">Send</button>
+        </form>
+      </section>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script src="src/form.js"></script>
+    <script src="src/light.js"></script>
+  </body>
+</html>

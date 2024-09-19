@@ -1,0 +1,8 @@
+$body-bg: #f4f4f4;
+$text-color: #333;
+
+body {
+  font-family: Arial, sans-serif;
+  background-color: $body-bg;
+  color: $text-color;
+}
