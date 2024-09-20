@@ -1,22 +1,12 @@
 body {
   font-family: Arial, sans-serif;
-  background-color: #333;
+  background-color: #1f1e1e;
   color: #f4f4f4;
 }
 
 h1,
 h4 {
   color: #f4f4f4;
-}
-
-.card {
-  margin-bottom: 20px;
-  background-color: #444;
-  color: #f4f4f4;
-}
-
-form .form-group {
-  margin-bottom: 15px;
 }
 
 #theme-toggle {
@@ -40,11 +30,6 @@ body.light-mode #theme-toggle {
 #theme-icon {
   width: 24px;
   height: 24px;
-}
-
-.btn-dark {
-  background-color: #f4f4f4;
-  color: #333;
 }
 
 body.light-mode {
@@ -81,20 +66,28 @@ body.light-mode .btn-primary {
   padding-bottom: -50px;
 }
 
+.CV {
+  text-align: center;
+  margin-top: 20px;
+  z-index: 1;
+}
+
 .download-CV {
   display: inline-block;
   padding: 10px 20px;
+  font-size: 16px;
+  color: #000000;
   background-color: #ffffff;
-  color: rgb(0, 0, 0);
-  text-align: center;
-  border-radius: 5px;
   text-decoration: none;
-  transition: background-color 0.3s;
-  margin-bottom: 50px;
+  border-radius: 5px;
+  z-index: 2;
+  position: relative;
 }
 
 .download-CV:hover {
-  background-color: #f581b1;
+  color: #000000;
+  transform: scale(1.03);
+  text-decoration: none;
 }
 
 /*----------------------------------------------------*/
@@ -103,9 +96,9 @@ body.light-mode .btn-primary {
   display: flex;
   align-items: center;
   justify-content: center;
+  z-index: 0; /* Asegúrate de que la línea de tiempo esté detrás del botón de descarga */
 }
 
-/* Imagen a la izquierda */
 .timeline-image-left {
   position: absolute;
   left: 0px;
@@ -113,6 +106,7 @@ body.light-mode .btn-primary {
   transform: translateY(-50%);
   width: 80px;
   height: auto;
+  z-index: 0;
 }
 
 .timeline-image-right {
@@ -178,7 +172,7 @@ body.light-mode .btn-primary {
   font-size: 1rem;
   white-space: normal;
   color: rgb(255, 255, 255);
-  background: #222121;
+  background: #313131;
   border-radius: 10px;
   border: 2px solid #f7f3f3;
 }
@@ -236,6 +230,75 @@ body.light-mode .btn-primary {
   z-index: 1;
 }
 
+/*----------------------------------------------------*/
+
+.card {
+  margin-bottom: 20px;
+  background-color: #333030;
+  color: #f4f4f4;
+  border-radius: 18px;
+  overflow: hidden;
+}
+
+.card-title {
+  font-weight: bold;
+  letter-spacing: 0px;
+  word-spacing: 16px;
+}
+
+.divider {
+  border: none;
+  height: 1px;
+  background-color: #ffffff;
+  margin: 10px 0;
+  width: 90%;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.btn-git {
+  margin-top: 7px;
+  background-color: #ffffff;
+  color: #000000;
+  border: none;
+  padding: 3px 8px;
+  border-radius: 5px;
+  text-decoration: none;
+  font-size: 14px;
+}
+
+.btn-git:hover {
+  color: #000000;
+  transform: scale(1.03);
+  text-decoration: none;
+}
+
+form .form-group {
+  margin-bottom: 15px;
+}
+
+.btn-send {
+  padding: 3px 8px;
+  background-color: #ffffff; /* Fondo blanco */
+  color: #000000; /* Color del texto */
+  border: none; /* Sin borde */
+  padding: 6px 10px;
+  border-radius: 5px;
+  font-size: 14.5px;
+}
+
+.btn-send:hover {
+  transform: scale(1.03);
+  text-decoration: none;
+}
+
+.footer {
+  text-align: center;
+  margin-top: 20px;
+  font-size: 0.8rem; /* Tamaño de fuente más pequeño */
+  color: #f4f4f4; /* Color del texto */
+}
+
 /* Responsive Design */
 
 @media (max-width: 1200px) and (min-width: 991px) {
@@ -246,7 +309,7 @@ body.light-mode .btn-primary {
 
 @media (max-width: 991px) and (min-width: 768px) {
   .timeline {
-    margin-top: 10px;
+    margin-top: 20px;
     margin-bottom: 10px;
     padding: 0 20px;
   }
@@ -282,7 +345,9 @@ body.light-mode .btn-primary {
 @media (max-width: 768px) {
   #theme-toggle {
     top: 10px;
-    right: 10px;
+    right: 20px;
+    width: 0.1px;
+    height: 0.1;
   }
 
   .timeline {
@@ -294,7 +359,7 @@ body.light-mode .btn-primary {
 
   .timeline ol {
     width: auto;
-    padding: 100px 0;
+    padding: 200px 0;
     display: flex;
   }
 
@@ -323,9 +388,24 @@ body.light-mode .btn-primary {
   }
 }
 
+@media (max-width: 575px) {
+  #theme-icon {
+    display: none;
+  }
+  #theme-toggle {
+    display: none;
+  }
+}
+
 @media (max-width: 480px) {
+  #theme-icon {
+    display: none;
+  }
+  #theme-toggle {
+    display: none;
+  }
   .timeline {
-    margin-top: 30px;
+    margin-top: 20px;
     margin-bottom: 30px;
     overflow-x: auto;
     padding: 0 20px;
@@ -333,7 +413,7 @@ body.light-mode .btn-primary {
 
   .timeline ol {
     width: 100%;
-    padding: 50px 0;
+    padding: 200px 0;
     display: flex;
   }
 
