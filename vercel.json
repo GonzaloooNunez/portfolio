@@ -12,6 +12,10 @@
     {
       "src": "styles/**/*",
       "use": "@vercel/static"
+    },
+    {
+      "src": "src/**/*",
+      "use": "@vercel/static"
     }
   ],
   "routes": [
@@ -22,6 +26,10 @@
     {
       "src": "/styles/(.*)",
       "dest": "/styles/$1"
+    },
+    {
+      "src": "/src/(.*)",
+      "dest": "/src/$1"
     },
     {
       "src": "/(.*)",
