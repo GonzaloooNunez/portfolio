@@ -1,7 +1,8 @@
 body {
-  font-family: Arial, sans-serif;
   background-color: #1f1e1e;
   color: #f4f4f4;
+  font-family: "EB Garamond", serif;
+  font-size: 17px;
 }
 
 h1,
@@ -10,13 +11,14 @@ h4 {
 }
 
 #theme-toggle {
-  width: 20px;
+  width: 17px;
+  height: 40px;
   background-color: white;
   border: none;
   padding: 10px;
   border-radius: 50%;
   cursor: pointer;
-  position: fixed;
+  position: absolute;
   top: 10px;
   right: 10px;
   z-index: 1000;
@@ -30,6 +32,8 @@ body.light-mode #theme-toggle {
 #theme-icon {
   width: 24px;
   height: 24px;
+  position: absolute;
+  top: 10px;
 }
 
 body.light-mode {
@@ -96,7 +100,7 @@ body.light-mode .btn-primary {
   display: flex;
   align-items: center;
   justify-content: center;
-  z-index: 0; /* Asegúrate de que la línea de tiempo esté detrás del botón de descarga */
+  z-index: 0;
 }
 
 .timeline-image-left {
@@ -117,6 +121,7 @@ body.light-mode .btn-primary {
   width: 80px;
   height: auto;
 }
+
 .timeline {
   white-space: nowrap;
   overflow-x: auto;
@@ -161,6 +166,7 @@ body.light-mode .btn-primary {
   height: 12px;
   transform: translateY(-50%);
   border-radius: 50%;
+
   background: #ffffff;
 }
 
@@ -279,9 +285,9 @@ form .form-group {
 
 .btn-send {
   padding: 3px 8px;
-  background-color: #ffffff; /* Fondo blanco */
-  color: #000000; /* Color del texto */
-  border: none; /* Sin borde */
+  background-color: #ffffff;
+  color: #000000;
+  border: none;
   padding: 6px 10px;
   border-radius: 5px;
   font-size: 14.5px;
@@ -295,8 +301,8 @@ form .form-group {
 .footer {
   text-align: center;
   margin-top: 20px;
-  font-size: 0.8rem; /* Tamaño de fuente más pequeño */
-  color: #f4f4f4; /* Color del texto */
+  font-size: 0.8rem;
+  color: #f4f4f4;
 }
 
 /* Responsive Design */
@@ -311,7 +317,7 @@ form .form-group {
   .timeline {
     margin-top: 20px;
     margin-bottom: 10px;
-    padding: 0 20px;
+    padding-right: 40px;
   }
   time {
     left: 10%;
@@ -336,7 +342,10 @@ form .form-group {
   .timeline ol li time {
     left: -50px;
   }
-
+  .timeline-image-left {
+    display: flex;
+    left: -30px;
+  }
   .timeline-image-right {
     right: 70px;
   }
@@ -350,38 +359,55 @@ form .form-group {
     height: 0.1;
   }
 
-  .timeline {
-    margin-top: 20px;
-    margin-bottom: 20px;
-    overflow-x: 100%;
-    padding: 0 20px;
+  .timeline-container {
+    padding: 40px 0px -200px -200px;
+    width: 100%;
+    margin-top: 50px;
+    margin-bottom: 120px;
   }
 
-  .timeline ol {
-    width: auto;
-    padding: 200px 0;
-    display: flex;
+  .timeline {
+    left: 0px;
+    width: 100%;
+    height: auto;
+    margin-left: 0px;
+    padding-left: 70px;
+    overflow: hidden;
   }
 
   .timeline ol li {
-    width: 100px;
-  }
-
-  .timeline ol li:last-child {
-    width: 170px;
+    margin-left: 0px;
   }
 
   .timeline ol li div {
-    width: 200px;
+    left: 20px;
+    width: calc(100% - 40px);
+    font-size: 0.9rem;
+    width: 120px;
   }
 
   .timeline ol li time {
-    left: -52px;
+    font-size: 0.8rem;
   }
 
-  .timeline-image-right {
-    right: -50px;
+  .timeline ol li div::before {
+    content: "";
+    position: absolute;
+    left: 50px;
+    width: 0;
+    height: 10px;
   }
+
+  .timeline ol li:last-child div::before {
+    content: "";
+    position: absolute;
+    left: 100px;
+    width: 0;
+    top: 118px;
+    border-width: 8px 8px 0 0;
+    border-color: #ffffff transparent transparent transparent;
+  }
+
   .timeline-image-left,
   .timeline-image-right {
     display: none;
@@ -389,49 +415,82 @@ form .form-group {
 }
 
 @media (max-width: 575px) {
-  #theme-icon {
-    display: none;
+  body {
+    padding-top: 40px;
   }
+  #theme-icon {
+    display: block;
+    position: absolute;
+    top: 10px;
+    left: 100%;
+    transform: translateX(-50%);
+  }
+
   #theme-toggle {
+    display: block;
+    position: absolute;
+    top: 40px;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+
+  body {
+    padding-top: 40px;
+  }
+  .timeline-image-left,
+  .timeline-image-right {
     display: none;
   }
 }
 
-@media (max-width: 480px) {
-  #theme-icon {
-    display: none;
+@media screen and (max-width: 480px) {
+  .timeline-container {
+    padding: 0;
+
+    width: 100%;
+    margin-bottom: 150px;
   }
-  #theme-toggle {
-    display: none;
-  }
+
   .timeline {
-    margin-top: 20px;
-    margin-bottom: 30px;
-    overflow-x: auto;
-    padding: 0 20px;
+    padding-top: 270px;
+    width: 170%;
+    margin-left: 0;
+    padding-bottom: 220px;
   }
 
   .timeline ol {
-    width: 100%;
-    padding: 200px 0;
-    display: flex;
+    padding: 0;
+    margin: 0;
+    list-style: none;
   }
 
   .timeline ol li {
-    width: 80px;
-  }
-
-  .timeline ol li:last-child {
-    width: 120px;
+    margin: 5px 0;
   }
 
   .timeline ol li div {
-    width: 150px;
     font-size: 0.9rem;
+    width: auto;
+    text-align: center;
+    padding: 10;
   }
 
   .timeline ol li time {
-    left: -50px;
     font-size: 0.8rem;
+    display: block;
+    margin-bottom: 0;
+  }
+
+  .timeline ol li:last-child div::before {
+    left: 60px;
+    top: 140px;
+  }
+
+  .timeline ol li div::before {
+    content: "";
+    position: absolute;
+    left: 40px;
+    width: 0;
+    height: 10px;
   }
 }
